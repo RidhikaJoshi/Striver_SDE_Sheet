@@ -6,7 +6,7 @@ Note : Output array must be sorted in non-increasing order.*/
 
 #include <bits/stdc++.h>
 using namespace std;
-// Time-O(NlogN)+O(K)
+// Time-O(N^2)+O(NlogN)+O(K)
 // Space -O(K)*2;
 class Solution
 {
@@ -36,3 +36,4 @@ public:
         return res;
     }
 };
+//
