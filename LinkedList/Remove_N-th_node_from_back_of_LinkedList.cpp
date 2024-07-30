@@ -38,3 +38,31 @@ public:
         return head;
     }
 };
+// Optimized approach
+// Time complexity: O(n)
+// Space complexity: O(1)
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n)
+    {
+        ListNode* slow=head,*fast=head;
+        int count=0;
+        while(count<n && fast!=NULL)
+        {
+            fast=fast->next;
+            count++;
+        }
+        if(slow==fast || fast==NULL)
+            return head->next;
+        while(fast->next!=NULL)
+        {
+            slow=slow->next;
+            fast=fast->next;
+        }
+        slow->next=slow->next->next;
+        return head;
+        
+
+        
+    }
+};
